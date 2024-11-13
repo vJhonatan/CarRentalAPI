@@ -8,10 +8,8 @@ namespace AluguelCarrosAPI.Controllers
     [ApiController]
     public class CarrosController : ControllerBase
     {
-        private static List<Carro> carros = new List<Carro> { };
+        private static List<Carro> carros = new List<Carro>();
 
-
-        /* Adicionar carro */
         [HttpPost]
         public ActionResult<List<Carro>> AddCarro (Carro newCar)
         {
@@ -19,7 +17,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok(carros);
         }
 
-        /* Ver carros disponíveis para aluguel */
         [HttpGet]
         public ActionResult<List<Carro>> GetCarros ()
         {
@@ -30,7 +27,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok(carsAvailable);
         }
 
-        /* Alugar carro por id */
         [HttpPost("alugar/{id}")]
         public ActionResult AlugarCarroById (int id)
         {
@@ -45,7 +41,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok($"{findCar.Modelo} alugado com sucesso!");
         }
 
-        /* Alugar carro por modelo */
         [HttpPost("alugar/modelo/{modelo}")]
         public ActionResult AlugarCarroByModel(string modelo)
         {
@@ -60,7 +55,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok($"{findCarModel.Modelo} ano {findCarModel.Ano} foi alugado com sucesso!");
         }
 
-        /* Consultar status de locação por id */
         [HttpGet("{id}")]
         public ActionResult GetCarroById (int id)
         {
@@ -71,7 +65,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok(viewCar);
         }
 
-        /* Devolução de carro por id */
         [HttpPut("devolução/{id}")]
         public ActionResult UpdateCarStatusById (int id)
         {
@@ -86,7 +79,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok($"{car.Modelo} foi devolvido com sucesso. Volte sempre!");
         }
 
-        /* Devolução de carro por modelo */
         [HttpPut("devolução/modelo/{modelo}")]
         public ActionResult UpdateCarStatusByModel(string modelo)
         {
@@ -101,7 +93,6 @@ namespace AluguelCarrosAPI.Controllers
             return Ok($"{carModel.Modelo} foi devolvido com sucesso. Volte sempre!");
         }
 
-        /* Deletar carro por id */
         [HttpDelete("{id}")]
         public ActionResult DeleteCar(int id)
         {
