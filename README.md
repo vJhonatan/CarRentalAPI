@@ -4,14 +4,14 @@ API REST construída para gerenciar o aluguel de carros.
 
 ## Funcionalidades
 
-- Adicionar um novo carro à frota
+- Adicionar um novo carro
 - Listar todos os carros disponíveis para aluguel
 - Alugar um carro por ID
 - Alugar um carro por modelo
 - Consultar o status de locação de um carro por ID
 - Realizar a devolução de um carro por ID
 - Realizar a devolução de um carro por modelo
-- Deletar um carro da frota por ID
+- Deletar um carro por ID
 
 ## Tecnologias Utilizadas
 
